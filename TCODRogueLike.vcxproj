@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{039C0E55-6B68-441F-AFFA-32010F7401DA}</ProjectGuid>
+    <RootNamespace>TCODRogueLike</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lib/libtcod-VS.lib;lib/libtcod-gui-VS.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\bresenham.h" />
+    <ClInclude Include="include\bresenham.hpp" />
+    <ClInclude Include="include\bsp.h" />
+    <ClInclude Include="include\bsp.hpp" />
+    <ClInclude Include="include\color.h" />
+    <ClInclude Include="include\color.hpp" />
+    <ClInclude Include="include\console.h" />
+    <ClInclude Include="include\console.hpp" />
+    <ClInclude Include="include\console_types.h" />
+    <ClInclude Include="include\fov.h" />
+    <ClInclude Include="include\fov.hpp" />
+    <ClInclude Include="include\fov_types.h" />
+    <ClInclude Include="include\gui\button.hpp" />
+    <ClInclude Include="include\gui\container.hpp" />
+    <ClInclude Include="include\gui\flatlist.hpp" />
+    <ClInclude Include="include\gui\gui.hpp" />
+    <ClInclude Include="include\gui\hbox.hpp" />
+    <ClInclude Include="include\gui\image.hpp" />
+    <ClInclude Include="include\gui\label.hpp" />
+    <ClInclude Include="include\gui\radiobutton.hpp" />
+    <ClInclude Include="include\gui\slider.hpp" />
+    <ClInclude Include="include\gui\statusbar.hpp" />
+    <ClInclude Include="include\gui\textbox.hpp" />
+    <ClInclude Include="include\gui\togglebutton.hpp" />
+    <ClInclude Include="include\gui\toolbar.hpp" />
+    <ClInclude Include="include\gui\vbox.hpp" />
+    <ClInclude Include="include\gui\widget.hpp" />
+    <ClInclude Include="include\heightmap.h" />
+    <ClInclude Include="include\heightmap.hpp" />
+    <ClInclude Include="include\image.h" />
+    <ClInclude Include="include\image.hpp" />
+    <ClInclude Include="include\lex.h" />
+    <ClInclude Include="include\lex.hpp" />
+    <ClInclude Include="include\libtcod.h" />
+    <ClInclude Include="include\libtcod.hpp" />
+    <ClInclude Include="include\libtcod_int.h" />
+    <ClInclude Include="include\list.h" />
+    <ClInclude Include="include\list.hpp" />
+    <ClInclude Include="include\mersenne.h" />
+    <ClInclude Include="include\mersenne.hpp" />
+    <ClInclude Include="include\mersenne_types.h" />
+    <ClInclude Include="include\mouse.h" />
+    <ClInclude Include="include\mouse.hpp" />
+    <ClInclude Include="include\mouse_types.h" />
+    <ClInclude Include="include\namegen.h" />
+    <ClInclude Include="include\namegen.hpp" />
+    <ClInclude Include="include\noise.h" />
+    <ClInclude Include="include\noise.hpp" />
+    <ClInclude Include="include\noise_defaults.h" />
+    <ClInclude Include="include\parser.h" />
+    <ClInclude Include="include\parser.hpp" />
+    <ClInclude Include="include\path.h" />
+    <ClInclude Include="include\path.hpp" />
+    <ClInclude Include="include\sys.h" />
+    <ClInclude Include="include\sys.hpp" />
+    <ClInclude Include="include\tree.h" />
+    <ClInclude Include="include\tree.hpp" />
+    <ClInclude Include="include\txtfield.h" />
+    <ClInclude Include="include\txtfield.hpp" />
+    <ClInclude Include="include\wrappers.h" />
+    <ClInclude Include="include\zip.h" />
+    <ClInclude Include="include\zip.hpp" />
+    <ClInclude Include="src\actor.h" />
+    <ClInclude Include="src\engine.h" />
+    <ClInclude Include="src\map.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\actor.cpp" />
+    <ClCompile Include="src\engine.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\map.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

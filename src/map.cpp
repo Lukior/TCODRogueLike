@@ -1,6 +1,8 @@
 #include "include/libtcod.hpp"
 #include "src/map.h"
 
+Map *Map::instance = NULL;
+
 Map::Map(int width, int height) : width(width),height(height) {
     tiles=new Tile[width*height];
     setWall(30,22);

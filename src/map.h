@@ -9,17 +9,10 @@ struct Tile {
     Tile() : canWalk(true), tileChar('.'), tileBackgroundColor(TCODColor::darkestGrey), tileForegroundColor(TCODColor::grey) {}
 };
 
-class Map {
-private:
-	static Map *instance = NULL;
-
-    // Constructor, destructor
-    Map(int width, int height);
-    ~Map();
-	
+class Map {	
 public :
     // Accessors
-	static inline Map const &getInstance()
+	static inline Map &getInstance()
 	{
 		return *instance;
 	}
@@ -44,12 +37,16 @@ public :
 
     // render fct
     void render() const;
+
 private :
+	static Map *instance;
+
+	// Constructor, destructor
+	Map(int width, int height);
+	~Map();
 
     int width,height;
     Tile *tiles;
     void setWall(int x, int y);
 };
-
-
 #endif // MAP_H_INCLUDED
