@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Lukior\Documents\iaproject\TCODRogueLike;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Lukior\Documents\iaproject\TCODRogueLike;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -130,13 +130,21 @@
     <ClInclude Include="include\zip.hpp" />
     <ClInclude Include="src\actor.h" />
     <ClInclude Include="src\engine.h" />
+    <ClInclude Include="src\RogueEngine\Component.h" />
+    <ClInclude Include="src\RogueEngine\Engine.h" />
+    <ClInclude Include="src\RogueEngine\GameObject.h" />
+    <ClInclude Include="src\RogueEngine\GameState.h" />
+    <ClInclude Include="src\RogueEngine\Scene.h" />
     <ClInclude Include="src\map.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\actor.cpp" />
     <ClCompile Include="src\engine.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\map.cpp" />
+    <ClCompile Include="src\RogueEngine\Component.cpp" />
+    <ClCompile Include="src\RogueEngine\Engine.cpp" />
+    <ClCompile Include="src\RogueEngine\GameState.cpp" />
+    <ClCompile Include="src\TestMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
