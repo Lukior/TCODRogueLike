@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(IncludePath);$(ProjectDir)</IncludePath>
+    <LibraryPath>C:\Users\Lukior\Documents\GitHub\TCODRogueLike;$(LibraryPath);$(ProjectDir)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -66,18 +66,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\bresenham.h" />
-    <ClInclude Include="include\bresenham.hpp" />
-    <ClInclude Include="include\bsp.h" />
-    <ClInclude Include="include\bsp.hpp" />
-    <ClInclude Include="include\color.h" />
-    <ClInclude Include="include\color.hpp" />
-    <ClInclude Include="include\console.h" />
-    <ClInclude Include="include\console.hpp" />
-    <ClInclude Include="include\console_types.h" />
-    <ClInclude Include="include\fov.h" />
-    <ClInclude Include="include\fov.hpp" />
-    <ClInclude Include="include\fov_types.h" />
+    <ClInclude Include="Classes\Graphics\Material.h" />
+    <ClInclude Include="Classes\Graphics\Renderer.h" />
+    <ClInclude Include="Classes\Math\Vector2.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="include\TCOD\bresenham.h" />
+    <ClInclude Include="include\TCOD\bresenham.hpp" />
+    <ClInclude Include="include\TCOD\bsp.h" />
+    <ClInclude Include="include\TCOD\bsp.hpp" />
+    <ClInclude Include="include\TCOD\color.h" />
+    <ClInclude Include="include\TCOD\color.hpp" />
+    <ClInclude Include="include\TCOD\console.h" />
+    <ClInclude Include="include\TCOD\console.hpp" />
+    <ClInclude Include="include\TCOD\console_types.h" />
+    <ClInclude Include="include\TCOD\fov.h" />
+    <ClInclude Include="include\TCOD\fov.hpp" />
+    <ClInclude Include="include\TCOD\fov_types.h" />
     <ClInclude Include="include\gui\button.hpp" />
     <ClInclude Include="include\gui\container.hpp" />
     <ClInclude Include="include\gui\flatlist.hpp" />
@@ -93,58 +97,55 @@
     <ClInclude Include="include\gui\toolbar.hpp" />
     <ClInclude Include="include\gui\vbox.hpp" />
     <ClInclude Include="include\gui\widget.hpp" />
-    <ClInclude Include="include\heightmap.h" />
-    <ClInclude Include="include\heightmap.hpp" />
-    <ClInclude Include="include\image.h" />
-    <ClInclude Include="include\image.hpp" />
-    <ClInclude Include="include\lex.h" />
-    <ClInclude Include="include\lex.hpp" />
-    <ClInclude Include="include\libtcod.h" />
-    <ClInclude Include="include\libtcod.hpp" />
-    <ClInclude Include="include\libtcod_int.h" />
-    <ClInclude Include="include\list.h" />
-    <ClInclude Include="include\list.hpp" />
-    <ClInclude Include="include\mersenne.h" />
-    <ClInclude Include="include\mersenne.hpp" />
-    <ClInclude Include="include\mersenne_types.h" />
-    <ClInclude Include="include\mouse.h" />
-    <ClInclude Include="include\mouse.hpp" />
-    <ClInclude Include="include\mouse_types.h" />
-    <ClInclude Include="include\namegen.h" />
-    <ClInclude Include="include\namegen.hpp" />
-    <ClInclude Include="include\noise.h" />
-    <ClInclude Include="include\noise.hpp" />
-    <ClInclude Include="include\noise_defaults.h" />
-    <ClInclude Include="include\parser.h" />
-    <ClInclude Include="include\parser.hpp" />
-    <ClInclude Include="include\path.h" />
-    <ClInclude Include="include\path.hpp" />
-    <ClInclude Include="include\sys.h" />
-    <ClInclude Include="include\sys.hpp" />
-    <ClInclude Include="include\tree.h" />
-    <ClInclude Include="include\tree.hpp" />
-    <ClInclude Include="include\txtfield.h" />
-    <ClInclude Include="include\txtfield.hpp" />
-    <ClInclude Include="include\wrappers.h" />
-    <ClInclude Include="include\zip.h" />
-    <ClInclude Include="include\zip.hpp" />
-    <ClInclude Include="src\actor.h" />
-    <ClInclude Include="src\engine.h" />
-    <ClInclude Include="src\RogueEngine\Component.h" />
-    <ClInclude Include="src\RogueEngine\Engine.h" />
-    <ClInclude Include="src\RogueEngine\GameObject.h" />
-    <ClInclude Include="src\RogueEngine\GameState.h" />
-    <ClInclude Include="src\RogueEngine\Scene.h" />
-    <ClInclude Include="src\map.h" />
+    <ClInclude Include="include\TCOD\heightmap.h" />
+    <ClInclude Include="include\TCOD\heightmap.hpp" />
+    <ClInclude Include="include\TCOD\image.h" />
+    <ClInclude Include="include\TCOD\image.hpp" />
+    <ClInclude Include="include\TCOD\lex.h" />
+    <ClInclude Include="include\TCOD\lex.hpp" />
+    <ClInclude Include="include\TCOD\libtcod.h" />
+    <ClInclude Include="include\TCOD\libtcod.hpp" />
+    <ClInclude Include="include\TCOD\libtcod_int.h" />
+    <ClInclude Include="include\TCOD\list.h" />
+    <ClInclude Include="include\TCOD\list.hpp" />
+    <ClInclude Include="include\TCOD\mersenne.h" />
+    <ClInclude Include="include\TCOD\mersenne.hpp" />
+    <ClInclude Include="include\TCOD\mersenne_types.h" />
+    <ClInclude Include="include\TCOD\mouse.h" />
+    <ClInclude Include="include\TCOD\mouse.hpp" />
+    <ClInclude Include="include\TCOD\mouse_types.h" />
+    <ClInclude Include="include\TCOD\namegen.h" />
+    <ClInclude Include="include\TCOD\namegen.hpp" />
+    <ClInclude Include="include\TCOD\noise.h" />
+    <ClInclude Include="include\TCOD\noise.hpp" />
+    <ClInclude Include="include\TCOD\noise_defaults.h" />
+    <ClInclude Include="include\TCOD\parser.h" />
+    <ClInclude Include="include\TCOD\parser.hpp" />
+    <ClInclude Include="include\TCOD\path.h" />
+    <ClInclude Include="include\TCOD\path.hpp" />
+    <ClInclude Include="include\TCOD\sys.h" />
+    <ClInclude Include="include\TCOD\sys.hpp" />
+    <ClInclude Include="include\TCOD\tree.h" />
+    <ClInclude Include="include\TCOD\tree.hpp" />
+    <ClInclude Include="include\TCOD\txtfield.h" />
+    <ClInclude Include="include\TCOD\txtfield.hpp" />
+    <ClInclude Include="include\TCOD\wrappers.h" />
+    <ClInclude Include="include\TCOD\zip.h" />
+    <ClInclude Include="include\TCOD\zip.hpp" />
+    <ClInclude Include="Classes\Component.h" />
+    <ClInclude Include="Classes\GameObject.h" />
+    <ClInclude Include="Systems\ComponentKernel.h" />
+    <ClInclude Include="Systems\RenderKernel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\actor.cpp" />
-    <ClCompile Include="src\engine.cpp" />
-    <ClCompile Include="src\map.cpp" />
-    <ClCompile Include="src\RogueEngine\Component.cpp" />
-    <ClCompile Include="src\RogueEngine\Engine.cpp" />
-    <ClCompile Include="src\RogueEngine\GameState.cpp" />
-    <ClCompile Include="src\TestMain.cpp" />
+    <ClCompile Include="Classes\Component.cpp" />
+    <ClCompile Include="Classes\GameObject.cpp" />
+    <ClCompile Include="Classes\Graphics\Material.cpp" />
+    <ClCompile Include="Classes\Graphics\Renderer.cpp" />
+    <ClCompile Include="Classes\Math\Vector2.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Systems\ComponentKernel.cpp" />
+    <ClCompile Include="Systems\RenderKernel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
