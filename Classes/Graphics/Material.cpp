@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "Material.h"
 
 namespace RogueEngine
 {

@@ -70,6 +70,9 @@
     <ClInclude Include="Classes\Graphics\Renderer.h" />
     <ClInclude Include="Classes\Math\Vector2.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="include\BaseClasses.h" />
+    <ClInclude Include="include\Graphics.h" />
+    <ClInclude Include="include\Math.h" />
     <ClInclude Include="include\TCOD\bresenham.h" />
     <ClInclude Include="include\TCOD\bresenham.hpp" />
     <ClInclude Include="include\TCOD\bsp.h" />
@@ -134,8 +137,8 @@
     <ClInclude Include="include\TCOD\zip.hpp" />
     <ClInclude Include="Classes\Component.h" />
     <ClInclude Include="Classes\GameObject.h" />
-    <ClInclude Include="Systems\ComponentKernel.h" />
-    <ClInclude Include="Systems\RenderKernel.h" />
+    <ClInclude Include="Kernels\ComponentKernel.h" />
+    <ClInclude Include="Kernels\RenderKernel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Component.cpp" />
@@ -144,8 +147,8 @@
     <ClCompile Include="Classes\Graphics\Renderer.cpp" />
     <ClCompile Include="Classes\Math\Vector2.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Systems\ComponentKernel.cpp" />
-    <ClCompile Include="Systems\RenderKernel.cpp" />
+    <ClCompile Include="Kernels\ComponentKernel.cpp" />
+    <ClCompile Include="Kernels\RenderKernel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

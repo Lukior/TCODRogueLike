@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Global.h"
+#include "include\Graphics.h"
 
 namespace RogueEngine
 {

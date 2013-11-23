@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "Renderer.h"
 
 namespace RogueEngine
 {

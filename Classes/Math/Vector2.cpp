@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "Vector2.h"
 
 namespace RogueEngine
 {

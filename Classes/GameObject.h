@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Global.h"
+#include "include\Math.h"
+#include "include\BaseClasses.h"
 
 namespace RogueEngine
 {
@@ -40,7 +42,7 @@ namespace RogueEngine
 	private:
 		string					m_Name;
 
-		Math::Vector2			m_Position;
+		Math::Vector2*			m_Position;
 
 		ComponentList			m_Components;
 		ChildrenList			m_Children;

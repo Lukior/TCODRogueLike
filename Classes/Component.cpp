@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "Component.h"
 
 namespace RogueEngine
 {

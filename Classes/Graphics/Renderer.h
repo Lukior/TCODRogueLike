@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Global.h"
+#include "include\BaseClasses.h"
+#include "include\Graphics.h"
 
 namespace RogueEngine
 {

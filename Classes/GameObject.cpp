@@ -1,18 +1,22 @@
-#include "Global.h"
+#include "GameObject.h"
 
 namespace RogueEngine
 {
 #pragma region CTOR/DTOR
 
-	GameObject::GameObject(const string& myName)
+	GameObject::GameObject(
+		const string& myName)
+		: m_Name(myName),
+		m_Parent(nullptr),
+		m_Position(new Math::Vector2())
 	{
 	}
 
 	GameObject::~GameObject()
 	{
+		delete m_Position;
 		for (Component* c : m_Components)
 			delete c;
-
 		for (GameObject* go : m_Children)
 			delete go;
 	}
@@ -21,7 +25,7 @@ namespace RogueEngine
 
 	Math::Vector2& GameObject::Position()
 	{
-		return m_Position;
+		return *m_Position;
 	}
 
 	ComponentList& GameObject::Components()
