@@ -8,7 +8,7 @@ namespace RogueEngine
 	class RenderKernel
 	{
 	public:
-		static void Initialize(UINT height, UINT width, const string& title);
+		static void Initialize(UINT height, UINT width, const string& title, int targetFPS);
 
 		static void RegisterMaterial(const string& name, Graphics::Material* theMaterial);
 		static void UnregisterMaterial(const string& name);

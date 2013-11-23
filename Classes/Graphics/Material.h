@@ -10,13 +10,11 @@ namespace RogueEngine
 		class Material
 		{
 		public:
-			Material(const string& name, int ascii, TCODColor foreground, TCODColor background);
+			Material(const string& name, MatCallback callback);
 			~Material();
 
-			int& Ascii();
-			TCODColor& Foreground();
-			TCODColor& Background();
 			const string& Name() const;
+			const MatCallback& Callback() const;
 
 			const RendererList& RegisteredRenderers() const;
 
@@ -24,9 +22,7 @@ namespace RogueEngine
 			void UnregisterRenderer(Renderer* renderer);
 
 		private:
-			TCODColor m_Foreground;
-			TCODColor m_Background;
-			int m_Ascii;
+			MatCallback m_Callback;
 
 			string m_Name;
 

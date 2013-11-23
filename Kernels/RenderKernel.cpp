@@ -11,7 +11,7 @@ namespace RogueEngine
 		return me;
 	}
 
-	void RenderKernel::Initialize(UINT height, UINT width, const string& title)
+	void RenderKernel::Initialize(UINT height, UINT width, const string& title, int targetFPS)
 	{
 		TCODConsole::initRoot(width, height, title.data());
 		RenderKernel& me = Get();
@@ -22,8 +22,11 @@ namespace RogueEngine
 
 		me.m_BackgroundClearColor = TCODColor::black;
 		me.m_ForegroundClearColor = TCODColor::black;
+
 		TCODConsole::root->setDefaultBackground(me.m_BackgroundClearColor);
 		TCODConsole::root->setDefaultForeground(me.m_ForegroundClearColor);
+
+		TCODSystem::setFps(targetFPS);
 	}
 
 	void RenderKernel::RegisterMaterial(const string& name, Graphics::Material* theMaterial)
@@ -107,12 +110,7 @@ namespace RogueEngine
 			Graphics::Material* theMat = matPair.second;
 			for (Graphics::Renderer* rend : theMat->RegisteredRenderers())
 			{
-				TCODConsole::root->putCharEx(
-					rend->Owner().Position().X(),
-					rend->Owner().Position().Y(),
-					theMat->Ascii(),
-					theMat->Foreground(),
-					theMat->Background());
+				theMat->Callback()(rend);
 			}
 		}
 		TCODConsole::flush();

@@ -23,6 +23,38 @@ namespace RogueEngine
 
 #pragma endregion
 
+	void GameObject::AddChild(GameObject* child)
+	{
+		auto it = find(m_Children.begin(), m_Children.end(), child);
+		if (it == m_Children.end())
+		{
+			m_Children.push_back(child);
+		}
+		else
+		{
+			StringBuilder msg;
+			msg << "GameObject " << child->Name() << " is already a child of " << m_Name;
+
+			OUTPUT_MSG("Warning", msg.str());
+		}
+	}
+
+	void GameObject::RemoveChild(GameObject* child)
+	{
+		auto it = find(m_Children.begin(), m_Children.end(), child);
+		if (it != m_Children.end())
+		{
+			m_Children.erase(it);
+		}
+		else
+		{
+			StringBuilder msg;
+			msg << "GameObject " << child->Name() << " is already removed or was unknown to " << m_Name;
+
+			OUTPUT_MSG("Warning", msg.str());
+		}
+	}
+
 	Math::Vector2& GameObject::Position()
 	{
 		return *m_Position;
@@ -46,6 +78,11 @@ namespace RogueEngine
 	GameObject*& GameObject::Parent()
 	{
 		return m_Parent;
+	}
+
+	Graphics::Renderer*& GameObject::Renderer()
+	{
+		return m_Renderer;
 	}
 
 	ostream& operator<< (ostream& os, GameObject& go)

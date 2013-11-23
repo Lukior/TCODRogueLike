@@ -3,6 +3,7 @@
 #include "Global.h"
 #include "include\Math.h"
 #include "include\BaseClasses.h"
+#include "include\Graphics.h"
 
 namespace RogueEngine
 {
@@ -10,7 +11,7 @@ namespace RogueEngine
 	{
 	private:
 		template<typename T>
-		bool IsPresent()
+		bool					IsPresent()
 		{
 			for (Component*& c : m_Components)
 			{
@@ -25,19 +26,23 @@ namespace RogueEngine
 		~GameObject();
 
 		template<typename T>
-		void AddComponent();
+		void					AddComponent();
 
 		template<typename T>
-		void RemoveComponent();
+		void					RemoveComponent();
 
-		Math::Vector2&	Position();
+		void					AddChild(GameObject* child);
+		void					RemoveChild(GameObject* child);
 
-		ComponentList&	Components();
-		ChildrenList&	Children();
-		string&			Name();
-		GameObject*&	Parent();
+		Math::Vector2&			Position();
 
-		friend ostream& operator<< (ostream& os, GameObject& go);
+		ComponentList&			Components();
+		ChildrenList&			Children();
+		string&					Name();
+		GameObject*&			Parent();
+		Graphics::Renderer*&	Renderer();
+
+		friend ostream&			operator<< (ostream& os, GameObject& go);
 
 	private:
 		string					m_Name;
@@ -46,11 +51,12 @@ namespace RogueEngine
 
 		ComponentList			m_Components;
 		ChildrenList			m_Children;
+		Graphics::Renderer*		m_Renderer;
 		GameObject*				m_Parent;
 	};
 
 	template<typename T>
-	void GameObject::AddComponent()
+	void		GameObject::AddComponent()
 	{
 		if (IsPresent<T>())
 			return;
@@ -61,7 +67,7 @@ namespace RogueEngine
 	}
 
 	template<typename T>
-	void GameObject::RemoveComponent()
+	void		GameObject::RemoveComponent()
 	{
 		for (Component*& c : m_Components)
 		{

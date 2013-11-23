@@ -6,13 +6,9 @@ namespace RogueEngine
 	{
 		Material::Material(
 			const string& name,
-			int ascii,
-			TCODColor foreground,
-			TCODColor background)
-			: m_Foreground(foreground),
-			m_Background(background),
-			m_Ascii(ascii),
-			m_Name(name)
+			MatCallback callback)
+			:	m_Callback(callback),
+				m_Name(name)
 		{
 			RenderKernel::RegisterMaterial(m_Name, this);
 		}
@@ -22,19 +18,9 @@ namespace RogueEngine
 			RenderKernel::UnregisterMaterial(m_Name);
 		}
 
-		int& Material::Ascii()
+		const MatCallback& Material::Callback() const
 		{
-			return m_Ascii;
-		}
-
-		TCODColor& Material::Foreground()
-		{
-			return m_Foreground;
-		}
-
-		TCODColor& Material::Background()
-		{
-			return m_Background;
+			return m_Callback;
 		}
 
 		const string& Material::Name() const
