@@ -7,8 +7,8 @@ namespace RogueEngine
 		Material::Material(
 			const string& name,
 			MatCallback callback)
-			:	m_Callback(callback),
-				m_Name(name)
+			: m_Callback(callback),
+			m_Name(name)
 		{
 			RenderKernel::RegisterMaterial(m_Name, this);
 		}

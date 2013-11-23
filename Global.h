@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <vector>
 #include <assert.h>
+#include <functional>
 
 #include <windows.h>
 

@@ -6,17 +6,17 @@ using namespace RogueEngine;
 
 int main()
 {
-	Graphics::Material testmat(
-		"TestMaterial",
-		[](Graphics::Renderer* rend)
-		{
-			TCODConsole::root->putCharEx(
-				rend->Owner().Position().X(),
-				rend->Owner().Position().Y(),
-				'X',
-				TCODColor::white,
-				TCODColor::black);
-		});
+	auto clbk = [](Graphics::Renderer* rend)
+	{
+		TCODConsole::root->putCharEx(
+			rend->Owner().Position().X(),
+			rend->Owner().Position().Y(),
+			'X',
+			TCODColor::white,
+			TCODColor::black);
+	};
+
+	Graphics::Material testmat("TestMaterial", clbk);
 
 	GameObject root("root");
 

@@ -9,7 +9,7 @@ namespace RogueEngine
 		class Renderer;
 		class Material;
 
-		typedef void(*MatCallback)(Renderer*);
+		typedef function<void(Renderer*)> MatCallback;
 	}
 
 	typedef unordered_map<string, Graphics::Material*> MaterialMap;
