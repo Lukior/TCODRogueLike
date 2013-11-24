@@ -86,15 +86,13 @@ namespace RogueEngine
 	void RenderKernel::UnregisterRenderer(Graphics::Renderer* renderer)
 	{
 		RenderKernel& me = Get();
-		if (me.m_Renderers.find(renderer) != me.m_Renderers.end())
+		assert(me.m_Renderers.find(renderer) != me.m_Renderers.end());
+		for (const string& mat : renderer->Materials())
 		{
-			for (const string& mat : renderer->Materials())
-			{
-				assert(me.m_Materials[mat] != nullptr);
-				me.m_Materials[mat]->UnregisterRenderer(renderer);
-			}
-			me.m_Renderers.erase(renderer);
+			assert(me.m_Materials[mat] != nullptr);
+			me.m_Materials[mat]->UnregisterRenderer(renderer);
 		}
+		me.m_Renderers.erase(renderer);
 	}
 
 	void RenderKernel::Clear()

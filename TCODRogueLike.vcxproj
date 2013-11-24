@@ -68,7 +68,7 @@
   <ItemGroup>
     <ClInclude Include="Classes\Graphics\Material.h" />
     <ClInclude Include="Classes\Graphics\Renderer.h" />
-    <ClInclude Include="Classes\Math\Vector2.h" />
+    <ClInclude Include="Classes\Math\Vector2.hpp" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="include\BaseClasses.h" />
     <ClInclude Include="include\Graphics.h" />
@@ -138,14 +138,17 @@
     <ClInclude Include="Classes\Component.h" />
     <ClInclude Include="Classes\GameObject.h" />
     <ClInclude Include="Kernels\ComponentKernel.h" />
+    <ClInclude Include="Kernels\InputKernel.h" />
     <ClInclude Include="Kernels\RenderKernel.h" />
+    <ClInclude Include="Kernels\TimeKernel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Component.cpp" />
     <ClCompile Include="Classes\GameObject.cpp" />
     <ClCompile Include="Classes\Graphics\Material.cpp" />
     <ClCompile Include="Classes\Graphics\Renderer.cpp" />
-    <ClCompile Include="Classes\Math\Vector2.cpp" />
+    <ClCompile Include="Kernels\InputKernel.cpp" />
+    <ClCompile Include="Kernels\TimeKernel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Kernels\ComponentKernel.cpp" />
     <ClCompile Include="Kernels\RenderKernel.cpp" />

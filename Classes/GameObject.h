@@ -34,7 +34,7 @@ namespace RogueEngine
 		void					AddChild(GameObject* child);
 		void					RemoveChild(GameObject* child);
 
-		Math::Vector2&			Position();
+		Math::Vector2<float>	Position;
 
 		ComponentList&			Components();
 		ChildrenList&			Children();
@@ -46,8 +46,6 @@ namespace RogueEngine
 
 	private:
 		string					m_Name;
-
-		Math::Vector2*			m_Position;
 
 		ComponentList			m_Components;
 		ChildrenList			m_Children;

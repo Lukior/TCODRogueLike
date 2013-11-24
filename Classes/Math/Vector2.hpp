@@ -7,18 +7,19 @@ namespace RogueEngine
 {
 	namespace Math
 	{
+		template <typename T>
 		class Vector2
 		{
 		public:
-			Vector2(int x, int y);
-			Vector2();
+			Vector2(T x, T y)
+				: x(x), y(y)
+			{}
+			Vector2()
+				: x(0), y(0)
+			{}
 
-			int& X();
-			int& Y();
-
-		private:
-			int m_X;
-			int m_Y;
+			T x;
+			T y;
 		};
 	}
 }

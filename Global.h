@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <map>
 #include <unordered_map>
 #include <vector>
 #include <assert.h>
@@ -22,11 +23,15 @@ namespace RogueEngine
 /*** Kernels  ***************************/
 	class ComponentKernel;
 	class RenderKernel;
+	class TimeKernel;
+	class InputKernel;
 
 	typedef stringstream StringBuilder;
 }
 
 #include "Kernels\ComponentKernel.h"
 #include "Kernels\RenderKernel.h"
+#include "Kernels\TimeKernel.h"
+#include "Kernels\InputKernel.h"
 
 #define OUTPUT_MSG(level, msg) cout << level << " : " << msg << endl;

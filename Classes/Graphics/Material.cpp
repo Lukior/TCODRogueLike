@@ -36,31 +36,15 @@ namespace RogueEngine
 		void Material::RegisterRenderer(Renderer* renderer)
 		{
 			auto it = find(m_Renderers.begin(), m_Renderers.end(), renderer);
-			if (it == m_Renderers.end())
-				m_Renderers.push_back(renderer);
-			else
-			{
-				StringBuilder msg;
-				msg << "Renderer of " << renderer->Owner().Name() << " already registered in material " << m_Name;
-
-				OUTPUT_MSG("Warning", msg.str());
-			}
+			assert(it == m_Renderers.end());
+			m_Renderers.push_back(renderer);
 		}
 
 		void Material::UnregisterRenderer(Renderer* renderer)
 		{
 			auto it = find(m_Renderers.begin(), m_Renderers.end(), renderer);
-			if (it != m_Renderers.end())
-			{
-				m_Renderers.erase(it);
-			}
-			else
-			{
-				StringBuilder msg;
-				msg << "Renderer of " << renderer->Owner().Name() << " has already been unregistered or was unknown to material " << m_Name;
-
-				OUTPUT_MSG("Warning", msg.str());
-			}
+			assert(it != m_Renderers.end());
+			m_Renderers.erase(it);
 		}
 	}
 }

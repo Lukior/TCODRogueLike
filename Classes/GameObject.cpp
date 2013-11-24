@@ -7,14 +7,12 @@ namespace RogueEngine
 	GameObject::GameObject(
 		const string& myName)
 		: m_Name(myName),
-		m_Parent(nullptr),
-		m_Position(new Math::Vector2())
+		m_Parent(nullptr)
 	{
 	}
 
 	GameObject::~GameObject()
 	{
-		delete m_Position;
 		for (Component* c : m_Components)
 			delete c;
 		for (GameObject* go : m_Children)
@@ -53,11 +51,6 @@ namespace RogueEngine
 
 			OUTPUT_MSG("Warning", msg.str());
 		}
-	}
-
-	Math::Vector2& GameObject::Position()
-	{
-		return *m_Position;
 	}
 
 	ComponentList& GameObject::Components()
