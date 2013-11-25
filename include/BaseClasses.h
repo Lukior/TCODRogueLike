@@ -7,8 +7,8 @@ namespace RogueEngine
 	class GameObject;
 	class Component;
 
-	typedef list<Component*> ComponentList;
-	typedef list<GameObject*> ChildrenList;
+	using ComponentList	=	list	<Component*>;
+	using ChildrenList	=	list	<GameObject*>;
 }
 
 #include "Classes\GameObject.h"

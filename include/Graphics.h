@@ -12,10 +12,10 @@ namespace RogueEngine
 		typedef function<void(Renderer*)> MatCallback;
 	}
 
-	typedef unordered_map<string, Graphics::Material*> MaterialMap;
-	typedef vector<string> MaterialList;
-	typedef unordered_map<Graphics::Renderer*, MaterialList> RendererMap;
-	typedef list<Graphics::Renderer*> RendererList;
+	using	MaterialMap		=	unordered_map	<string, Graphics::Material*>;
+	using	MaterialList	=	vector			<string>;
+	using	RendererMap		=	unordered_map	<Graphics::Renderer*, MaterialList>;
+	using	RendererList	=	list			<Graphics::Renderer*>;
 }
 
 #include "Classes\Graphics\Material.h"

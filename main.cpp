@@ -21,26 +21,11 @@ public:
 	{
 		float speed = 10.0f;
 
-		if (InputKernel::IsPressed(TCOD_keycode_t::TCODK_RIGHT))
-		{
-			Owner().Position.x =
-				MIN(Owner().Position.x + speed * TimeKernel::DeltaTime(), 79);
-		}
-		else if (InputKernel::IsPressed(TCOD_keycode_t::TCODK_LEFT))
-		{
-			Owner().Position.x =
-				MAX(Owner().Position.x - speed * TimeKernel::DeltaTime(), 0);
-		}
-		if (InputKernel::IsPressed(TCOD_keycode_t::TCODK_UP))
-		{
-			Owner().Position.y =
-				MAX(Owner().Position.y - speed * TimeKernel::DeltaTime(), 0);
-		}
-		else if (InputKernel::IsPressed(TCOD_keycode_t::TCODK_DOWN))
-		{
-			Owner().Position.y =
-				MIN(Owner().Position.y + speed * TimeKernel::DeltaTime(), 79);
-		}
+		Owner().Position =
+			Owner().Position
+				+ (InputKernel::KeyboardAxis()
+					* TimeKernel::DeltaTime()
+					* speed);
 	}
 };
 
@@ -67,18 +52,9 @@ int main()
 
 	root.Renderer() = new Graphics::Renderer(&root, myList);
 
-	RenderKernel::Initialize(80, 80, "test", 60);
-	while (!TCODConsole::isWindowClosed())
-	{
-		TimeKernel::Update();
-		InputKernel::Update();
+	Engine engine;
 
-		ComponentKernel::Update();
-		ComponentKernel::LateUpdate();
-
-		RenderKernel::Clear();
-		RenderKernel::Render();
-	}
+	engine.Run();
 
 	getchar();
 	return 0;

@@ -7,23 +7,23 @@ namespace RogueEngine
 	class Component
 	{
 	public:
-		Component();
-		virtual ~Component();
+						Component();
+		virtual			~Component();
 
-		virtual void Start() = 0;
+		virtual void	Start() = 0;
 
-		virtual void Update();
-		virtual void LateUpdate();
+		virtual void	Update();
+		virtual void	LateUpdate();
 
-		virtual void Destroy() = 0;
+		virtual void	Destroy() = 0;
 
-		GameObject& Owner();
+		GameObject&		Owner();
 
 	private:
-		friend GameObject;
+		friend			GameObject;
 
-		void SetOwner(GameObject* theOwner);
+		void			SetOwner(GameObject* theOwner);
 
-		GameObject* m_Owner;
+		GameObject*		m_Owner;
 	};
 }

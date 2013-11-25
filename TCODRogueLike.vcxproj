@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Classes\Engine.h" />
     <ClInclude Include="Classes\Graphics\Material.h" />
     <ClInclude Include="Classes\Graphics\Renderer.h" />
     <ClInclude Include="Classes\Math\Vector2.hpp" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Classes\Component.cpp" />
+    <ClCompile Include="Classes\Engine.cpp" />
     <ClCompile Include="Classes\GameObject.cpp" />
     <ClCompile Include="Classes\Graphics\Material.cpp" />
     <ClCompile Include="Classes\Graphics\Renderer.cpp" />

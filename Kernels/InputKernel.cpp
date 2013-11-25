@@ -19,7 +19,8 @@ namespace RogueEngine
 		TCOD_key_t key;
 		TCOD_mouse_t mouse;
 		TCOD_event_t event;
-		while (event = TCODSystem::checkForEvent(TCOD_EVENT_ANY, &key, &mouse))
+
+		while ((event = TCODSystem::checkForEvent(TCOD_EVENT_ANY, &key, &mouse)) != 0)
 		{
 			switch (event)
 			{
@@ -28,6 +29,8 @@ namespace RogueEngine
 				break;
 			case TCOD_EVENT_KEY_RELEASE:
 				me.m_KeyboardStates[key.vk] = false;
+				break;
+			default:
 				break;
 			}
 
@@ -50,6 +53,13 @@ namespace RogueEngine
 			me.m_MouseCellMovement.x = mouse.dcx;
 			me.m_MouseCellMovement.y = mouse.dcy;
 		}
+
+		me.m_KeyboardAxis.x =
+			(me.IsPressed(TCOD_keycode_t::TCODK_LEFT) ? -1 :
+			(me.IsPressed(TCOD_keycode_t::TCODK_RIGHT) ? 1 : 0));
+		me.m_KeyboardAxis.y =
+			(me.IsPressed(TCOD_keycode_t::TCODK_UP) ? -1 :
+			(me.IsPressed(TCOD_keycode_t::TCODK_DOWN) ? 1 : 0));
 	}
 
 	bool InputKernel::IsPressed(TCOD_keycode_t key)
@@ -90,5 +100,10 @@ namespace RogueEngine
 	const Math::Vector2<float>& InputKernel::MouseCellMovement()
 	{
 		return Get().m_MouseCellMovement;
+	}
+
+	const Math::Vector2<float>& InputKernel::KeyboardAxis()
+	{
+		return Get().m_KeyboardAxis;
 	}
 }

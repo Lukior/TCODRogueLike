@@ -22,8 +22,8 @@ namespace RogueEngine
 		}
 
 	public:
-		GameObject(const string& myName);
-		~GameObject();
+								GameObject(const string& myName);
+								~GameObject();
 
 		template<typename T>
 		void					AddComponent();
@@ -54,7 +54,7 @@ namespace RogueEngine
 	};
 
 	template<typename T>
-	void		GameObject::AddComponent()
+	void						GameObject::AddComponent()
 	{
 		if (IsPresent<T>())
 			return;
@@ -65,7 +65,7 @@ namespace RogueEngine
 	}
 
 	template<typename T>
-	void		GameObject::RemoveComponent()
+	void						GameObject::RemoveComponent()
 	{
 		for (Component*& c : m_Components)
 		{

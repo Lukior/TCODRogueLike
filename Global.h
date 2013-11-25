@@ -20,18 +20,22 @@ using namespace std;
 
 namespace RogueEngine
 {
-/*** Kernels  ***************************/
+	/*** Kernels  ***************************/
 	class ComponentKernel;
 	class RenderKernel;
 	class TimeKernel;
 	class InputKernel;
 
-	typedef stringstream StringBuilder;
+	class Engine;
+
+	using StringBuilder	=	stringstream;
 }
 
 #include "Kernels\ComponentKernel.h"
 #include "Kernels\RenderKernel.h"
 #include "Kernels\TimeKernel.h"
 #include "Kernels\InputKernel.h"
+
+#include "Classes\Engine.h"
 
 #define OUTPUT_MSG(level, msg) cout << level << " : " << msg << endl;

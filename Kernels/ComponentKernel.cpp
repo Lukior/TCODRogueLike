@@ -43,7 +43,7 @@ namespace RogueEngine
 	{
 		auto& comps = Self().m_ManagedComponents;
 
-		for (Component*& c : Self().m_ManagedComponents)
+		for (Component*& c : comps)
 			c->Update();
 	}
 
@@ -51,7 +51,7 @@ namespace RogueEngine
 	{
 		auto& comps = Self().m_ManagedComponents;
 
-		for (Component*& c : Self().m_ManagedComponents)
+		for (Component*& c : comps)
 			c->LateUpdate();
 	}
 }
